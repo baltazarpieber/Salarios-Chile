@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salarios Chile | Descubre si te están pagando menos de lo que vales</title>
+    <meta
+      name="description"
+      content="Diagnóstico salarial real en Chile. Descubre si estás bajo mercado con datos reportados por personas como tú."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p class="badge">Diagnóstico salarial basado en datos reales de Chile</p>
+        <h1>Descubre si te están pagando menos de lo que vales.</h1>
+        <p class="hero-copy">
+          No es un comparador neutro. Es una herramienta para detectar subpago, medir tu brecha y mostrar cuánto
+          deberías estar ganando según tu realidad laboral.
+        </p>
+        <div class="cta-group">
+          <a href="#diagnostico" class="button button-primary">Hacer diagnóstico ahora</a>
+          <a href="#explorador" class="button button-secondary">Ver versión gratuita</a>
+        </div>
+        <div class="price-pill">
+          <strong>Pago único:</strong> reporte profesional entre <span>USD 9 y 15</span>. Sin suscripción mensual.
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="explorador" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Versión gratuita (limitada)</h2>
+            <p>
+              Mira un promedio referencial por profesión en Chile, su rango amplio y número de reportes. Suficiente
+              para generar contexto, no para cerrar tu caso.
+            </p>
+          </div>
+
+          <div class="card">
+            <label for="profesionFree">Profesión</label>
+            <select id="profesionFree">
+              <option>Desarrollador/a de Software</option>
+              <option>Analista de Datos</option>
+              <option>Contador/a</option>
+              <option>Ingeniero/a Civil Industrial</option>
+              <option>Diseñador/a UX/UI</option>
+              <option>Enfermero/a</option>
+            </select>
+            <button id="btnExplorar" class="button button-secondary">Consultar referencia general</button>
+
+            <div id="resultadoGratis" class="result muted">
+              <h3>Referencia general</h3>
+              <p>Selecciona una profesión para ver el promedio, rango amplio y total de reportes en Chile.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="diagnostico" class="section section-dark">
+        <div class="container">
+          <div class="section-head">
+            <h2>Diagnóstico salarial personal</h2>
+            <p>
+              Ingresa tus datos laborales. Te mostraremos un resultado parcial y podrás desbloquear el análisis completo
+              con pago único.
+            </p>
+          </div>
+
+          <form id="salaryForm" class="card form-grid">
+            <label>Profesión <input name="profesion" required placeholder="Ej: Data Analyst" /></label>
+            <label>Industria <input name="industria" required placeholder="Ej: Banca" /></label>
+            <label>Ciudad <input name="ciudad" required placeholder="Ej: Santiago" /></label>
+            <label>Cargo / nivel jerárquico <input name="cargo" required placeholder="Ej: Senior" /></label>
+            <label>Años de experiencia exactos <input type="number" name="experiencia" min="0" step="0.5" required /></label>
+            <label>Sueldo líquido mensual (CLP) <input type="number" name="sueldo" min="300000" step="10000" required /></label>
+            <label>Tipo de contrato
+              <select name="contrato" required>
+                <option value="">Selecciona</option>
+                <option>Indefinido</option>
+                <option>Plazo fijo</option>
+                <option>Honorarios</option>
+              </select>
+            </label>
+
+            <h3 class="full">Campos opcionales para mayor precisión</h3>
+            <label>Tamaño de empresa <input name="empresa" placeholder="Ej: 200-500 personas" /></label>
+            <label>Bonos anuales (CLP) <input type="number" name="bonos" min="0" step="10000" /></label>
+            <label>Modalidad de trabajo
+              <select name="modalidad">
+                <option value="">Selecciona</option>
+                <option>Presencial</option>
+                <option>Híbrido</option>
+                <option>Remoto</option>
+              </select>
+            </label>
+            <label>Nivel de estudios <input name="estudios" placeholder="Ej: Universitario" /></label>
+            <label>Personas a cargo <input type="number" name="personas" min="0" step="1" /></label>
+            <label>Horas trabajadas por semana <input type="number" name="horas" min="1" step="1" /></label>
+
+            <button class="button button-primary full" type="submit">Calcular diagnóstico parcial</button>
+          </form>
+
+          <div id="resultadoParcial" class="card result hidden"></div>
+          <div id="resultadoPremium" class="card result hidden"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container trust-grid">
+          <div>
+            <h2>Privacidad y credibilidad primero</h2>
+            <ul>
+              <li>Solo mostramos estadísticas agregadas, nunca sueldos individuales.</li>
+              <li>No se publican resultados en segmentos con menos de 30 reportes.</li>
+              <li>Separación de sueldo base y bonos para evitar sesgos.</li>
+              <li>Reporte profesional descargable en PDF al desbloquear.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Qué desbloqueas con el pago único</h3>
+            <ul>
+              <li>Percentil exacto y riesgo de subpago.</li>
+              <li>Brecha salarial en % y en CLP mensual.</li>
+              <li>Comparación por industria, ciudad, empresa y experiencia.</li>
+              <li>Simulación de sueldo objetivo + proyección a 3 años.</li>
+              <li>Descarga inmediata de reporte PDF profesional.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>Salarios Chile · Diagnóstico salarial para el mercado chileno.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
